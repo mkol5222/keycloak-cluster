@@ -29,7 +29,7 @@ services:
 
   kc2:
     container_name: kc2
-    image: quay.io/keycloak/keycloak:latest
+    image: quay.io/keycloak/keycloak:17.0.0-legacy
     environment:
       DB_VENDOR: postgres
       DB_ADDR: postgres
