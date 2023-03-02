@@ -7,8 +7,16 @@ services:
     environment:
       POSTGRES_USER: keycloak
       POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata_volume:/var/lib/postgresql
     ports:
       - 5432:5432
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
   kc1:
     container_name: kc1
@@ -52,3 +60,6 @@ services:
     depends_on:
       - kc1
       - kc2
+
+volumes:
+  pgdata_volume: {}
